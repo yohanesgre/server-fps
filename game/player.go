@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"math/rand"
 
-	serverplugin "github.com/yohanesgre/go-game-server-module"
+	serverplugin "github.com/yohanesgre/server-fps/network"
 )
 
 // Player Player

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./game"
-	network "./network"
+	"github.com/yohanesgre/server-fps/game"
+	network "github.com/yohanesgre/server-fps/network"
 	"log"
 	"time"
 )
@@ -13,15 +13,15 @@ func main() {
 
 	ss, err := network.NewSocketService(host, hostUdp)
 	if err != nil {
-		log.Println(er)
+		log.Println(err)
 		return
 	}
 
 	ss.SetHeartBeat(5*time.Second, 30*time.Second)
 	ss.RegMessageHandler(game.HandleMessage)
-	ss.RegUDPMessageHandler(game.HandleMessaeUDP)
+	ss.RegUDPMessageHandler(game.HandleMessageUDP)
 	ss.RegConnectHandler(game.HandleConnect)
-	ss.RegDisconnectHandler(game.HandleDisconect)
+	ss.RegDisconnectHandler(game.HandleDisconnect)
 
 	log.Println("server running on " + host + " and " + hostUdp)
 	ss.Serv()

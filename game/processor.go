@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	serverplugin "github.comyohanesgre/go-game-server-module"
+	serverplugin "github.com/yohanesgre/server-fps/network"
 )
 
 var a = []*net.UDPAddr{}
